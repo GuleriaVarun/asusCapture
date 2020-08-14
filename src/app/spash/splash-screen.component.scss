@@ -1,0 +1,48 @@
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  filter: none !important;
+  -webkit-filter: none !important;
+}
+
+.imagebox {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url("../../assets/img/background.jpg");
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation-delay: 4s;
+}
+
+.subtitle {
+  font-size: 2em;
+  font-style: italic;
+  font-family: monospace;
+  padding: 0.5em;
+  position: relative;
+  left: 0;
+  top: 0;
+  margin: auto;
+  display: table;
+}
+
+.image-div {
+  position: relative;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  animation-delay: 4s;
+}

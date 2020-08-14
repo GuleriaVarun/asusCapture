@@ -1,0 +1,13 @@
+<p-dataView [value]="onlineUsersList">
+  <ng-template let-user pTemplate="listItem">
+    <div class="p-col-12">
+      <div class="product-list-item">
+        <img src="{{ user.profile }}" />
+        <div class="product-list-detail">
+          <div class="product-name">{{ user.name }}</div>
+          <!-- <div class="product-description">{{ product.description }}</div> -->
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</p-dataView>

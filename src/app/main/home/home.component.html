@@ -1,0 +1,41 @@
+<p-panel>
+  <p-header>
+    {{ title }}
+  </p-header>
+
+  <!-- CONTENT -->
+  <div class="content" *ngIf="!!posts">
+    <app-posts [posts]="posts" *ngIf="postsTabSeleted"></app-posts>
+    <app-user [userConnected]="userConnected" *ngIf="userTabSeleted"></app-user>
+    <app-online-users
+      [onlineUsersList]="onlineUsersList"
+      *ngIf="onlineUserTabSelected"
+    ></app-online-users>
+  </div>
+
+  <p-footer>
+    <div class="p-grid center-align">
+      <div class="p-col">
+        <i
+          class="pi pi-home"
+          style="font-size: 1rem; cursor: pointer;"
+          (click)="openPosts()"
+        ></i>
+      </div>
+      <div class="p-col">
+        <i
+          class="pi pi-user"
+          style="font-size: 1rem; cursor: pointer;"
+          (click)="openProfile()"
+        ></i>
+      </div>
+      <div class="p-col">
+        <i
+          class="pi pi-users"
+          style="font-size: 1rem; cursor: pointer;"
+          (click)="openOnlineUsers()"
+        ></i>
+      </div>
+    </div>
+  </p-footer>
+</p-panel>

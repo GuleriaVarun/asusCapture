@@ -1,0 +1,49 @@
+<p-dataView #dv [value]="posts" layout="grid">
+  <ng-template let-post pTemplate="gridItem">
+    <div class="p-col-12 p-md-4">
+      <div class="product-grid-item card">
+        <div class="product-grid-item-content">
+          <img src="{{ post.url }}" />
+          <div class="product-name">{{ post.userName }}</div>
+          <div class="product-description">{{ post.caption }}</div>
+        </div>
+        <div class="product-grid-item-bottom">
+          <span class="product-price">
+            <i
+              class="pi pi-heart"
+              *ngIf="!post.likeCounter || post.likeCounter < 0"
+              style="font-size: 1rem;"
+              (click)="actionLiked(post)"
+            ></i>
+            <i
+              class="pi pi-heart"
+              *ngIf="post.likeCounter > 0"
+              style="font-size: 1rem; color: red;"
+              (click)="actionLiked(post)"
+            ></i>
+            <span
+              ><i
+                >{{ post.likeCounter }}
+                <span
+                  class="product-category"
+                  *ngIf="post.likeCounter && post.likeCounter === 1"
+                >
+                  Like</span
+                >
+                <span
+                  class="product-category"
+                  *ngIf="post.likeCounter && post.likeCounter > 1"
+                >
+                  Likes</span
+                ></i
+              ></span
+            >
+          </span>
+          <i class="pi pi-map-marker" style="font-size: 1rem;"
+            ><span class="product-price">{{ post.location }}</span></i
+          >
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</p-dataView>
